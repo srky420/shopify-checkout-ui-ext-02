@@ -1,0 +1,17 @@
+query RunInput {
+  cart {
+    lines {
+      quantity
+      merchandise {
+        ... on ProductVariant {
+          product {
+            title
+            max_quantity: metafield (key: "max_amount", namespace: "custom") {
+              value
+            }
+          }
+        }
+      }
+    }
+  }
+}
